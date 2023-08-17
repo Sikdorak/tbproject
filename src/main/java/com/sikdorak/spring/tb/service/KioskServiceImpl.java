@@ -1,21 +1,34 @@
 package com.sikdorak.spring.tb.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sikdorak.spring.tb.dto.KioskDto;
+import com.sikdorak.spring.tb.mapper.KioskMapper;
+
+import lombok.Setter;
 
 @Service
 public class KioskServiceImpl implements KioskService {
 	
-	@Override
+	@Setter(onMethod_ = @Autowired)
+	private KioskMapper mapper;
 	
+	@Override
 	public List<KioskDto> getBurgerList(){
-		ArrayList<KioskDto> burgerList = new ArrayList<>();
-		burgerList.add(new KioskDto("h1","치즈버거",10000));
-		return burgerList;
+		return mapper.getBurgerList();
+	}
+	
+	@Override
+	public List<KioskDto> getDrinkList(){
+		return mapper.getDrinkList();
+	}
+	
+	@Override
+	public List<KioskDto> getSideList(){
+		return mapper.getSideList();
 	}
 
 }

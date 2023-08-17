@@ -42,6 +42,10 @@
 	<logger name="jdbc.connection">
 		<level value="warn" />
 	</logger>
+	<logger name="jdbc.resultsettable" additivity="false"> 
+		<level value="info"/>  
+		<appender-ref ref="console"/> 
+	</logger>
 
 	<!-- Root Logger -->
 	<root>
