@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+.header {
+	background-color: aqua;
+	width: 1200px;
+	height: 300px;
+}
+
+.list {
+	display: flex;
+	width: 1200px;
+	height: 100px;
+	background-color: green;
+	border: 2px black;
+}
+
+.burger{
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+}
+.drink{
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+}
+.side{
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+}
+
+.bottom{
+	display: flex;
+	width: 1200px;
+	height: 200px
+}
+
+.admin{
+	background-color: red;
+	width: 50%
+}
+
+.basket{
+	background-color: yellow;
+	width: 50%
+}
+
+

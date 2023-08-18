@@ -19,15 +19,27 @@
 	<div class="side" onclick="location.href='/tb/getSideList';">사이드</div>
 </div>
 
+<script>
+function sendBurgerOrder(productName, productPrice) {
+	var url = '/tb/basketList?name=' + encodeURIComponent(productName) + '&price=' + productPrice;
+	window.location.href = url;
+}
+</script>
+
 <div class="productBox">
 	<c:forEach var="product" items="${burger}" begin="0" end="9">
-		<div class="item" onclick="">
+		<div class="item" onclick="sendBurgerOrder('${product.p_name}' , ${product.p_price})">
 			${product.p_name}
 			${product.p_price}
 		</div>
 	</c:forEach>
 </div>
 
+
+<div class="bottom">
+	
+	
+</div>
 
 </body>
 </html>
