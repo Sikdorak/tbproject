@@ -1,11 +1,18 @@
 package com.sikdorak.spring.tb.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import com.sikdorak.spring.tb.dto.ProductDto;
 import com.sikdorak.spring.tb.service.KioskService;
 
 import lombok.AllArgsConstructor;
@@ -24,18 +31,32 @@ public class KioskController {
 	
 	@GetMapping("/getDrinkList")
 	public void getDrinkList(Model model) {
-		model.addAttribute("burger",service.getDrinkList());
+		model.addAttribute("drink",service.getDrinkList());
 	}
 	
 	@GetMapping("/getSideList")
 	public void getSideList(Model model) {
-		model.addAttribute("burger",service.getSideList());
+		model.addAttribute("side",service.getSideList());
 	}
 	
-	@GetMapping("/basketList")
-	public void basketList(@RequestParam String name, @RequestParam int price, Model model) {
-		model.addAttribute("productName", name);
-		model.addAttribute("productPrice", price);
+	@GetMapping("/addCart")
+	public String addCart(ProductDto product, HttpSession session) {
+		List<ProductDto> cartItems = (List<ProductDto>) session.getAttribute("cartItems");
+		
+		if(cartItems == null) {
+			cartItems = new ArrayList<>();
+		}
+		
+		cartItems.add(product);
+		session.setAttribute("cartItems", cartItems);
+		
+		return "redirect:/tb/cartList";
+	}
+	
+	@GetMapping("cartList")
+	public void cartList(HttpSession session, Model model) {
+		List<ProductDto> cartItems = (List<ProductDto>) session.getAttribute("cartItems");
+		model.addAttribute("cartItems", cartItems);
 	}
 
 }

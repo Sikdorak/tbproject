@@ -1,16 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>			    
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="${path}/resources/home.css">
-<title>Home</title>
+<link rel="stylesheet" href="${path}/resources/cartList.css">
+<title>Insert title here</title>
 </head>
 <body>
-
 <div class="header"></div>
 
 <div class="list">
@@ -19,11 +18,16 @@
 	<div class="side" onclick="location.href='/tb/getSideList';">사이드</div>
 </div>
 
-<div class="bottom">
-	<div class="admin">관리자</div>
-	<div class="basket" onclick="location.href='/tb/basketList';">장바구니</div>
+<div class="orderList">
+	<c:forEach items="${cartItems}" var="item">
+		<li>${item.name} ${item.price}</li>
+	</c:forEach>
 </div>
 
+<div class="bottom">
+	<div class="goMain" onclick="location.href='/';">메인으로</div>
+	<div class="order">주문하기</div>
+</div>
 
 </body>
 </html>

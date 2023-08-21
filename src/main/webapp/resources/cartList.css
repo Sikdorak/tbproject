@@ -36,16 +36,24 @@
 	font-size: 30px;
 }
 
-.productBox{
-	display: flex;
-	flex-wrap: wrap;
+.orderList{
 	width: 1200px;
-	height: 600px;
+	height: 500px;
 }
 
-.item{
-	width: 20%;
-	height: 50%;
-	background-color: lightblue;
-	border-color: black;
+.bottom{
+	width: 1200px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: lime;
+}
+
+.goMain{
+	width: 50%;
+}
+
+.order{
+	width: 50%;
 }
