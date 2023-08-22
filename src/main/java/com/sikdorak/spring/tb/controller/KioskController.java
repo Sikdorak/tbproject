@@ -1,7 +1,5 @@
 package com.sikdorak.spring.tb.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
-
 import java.util.ArrayList;
 import java.util.List;
 
