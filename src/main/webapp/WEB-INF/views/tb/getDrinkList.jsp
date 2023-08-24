@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="${path}/resources/drink.css">
+<link rel="stylesheet" href="${path}/resources/css/drink.css">
 <title>Insert title here</title>
 </head>
 <body>

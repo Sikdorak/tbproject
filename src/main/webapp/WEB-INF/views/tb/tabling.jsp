@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="${path}/resources/tabling.css">
+<link rel="stylesheet" href="${path}/resources/css/tabling.css">
 <title>Insert title here</title>
 </head>
 <body>

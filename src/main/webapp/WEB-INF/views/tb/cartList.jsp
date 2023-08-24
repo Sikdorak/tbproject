@@ -18,7 +18,7 @@
 	<div class="side" onclick="location.href='/tb/getSideList';">사이드</div>
 </div>
 
-<div class="orderList">
+<div class="order_List">
 	<c:forEach items="${cartItems}" var="item">
 		<li>${item.name} ${item.price}</li>
 	</c:forEach>

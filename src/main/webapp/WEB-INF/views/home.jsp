@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="${path}/resources/home.css">
+<link rel="stylesheet" href="${path}/resources/css/home.css">
 <title>Home</title>
 </head>
 <body>

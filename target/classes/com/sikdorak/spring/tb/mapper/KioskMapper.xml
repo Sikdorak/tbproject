@@ -15,4 +15,8 @@
 		select*from side_table
 	</select>
 	
+	<update id="updateBurger">
+		insert into order_menu_table values(#{p_id},#{p_name},#{p_price})
+	</update>
+	
 </mapper>	

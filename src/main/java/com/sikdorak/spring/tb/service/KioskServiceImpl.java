@@ -30,5 +30,10 @@ public class KioskServiceImpl implements KioskService {
 	public List<KioskDto> getSideList(){
 		return mapper.getSideList();
 	}
+	
+	@Override
+	public void updateBurger(String p_id,String p_name,int p_price) {
+		mapper.updateBurger(p_id,p_name,p_price);
+	}
 
 }

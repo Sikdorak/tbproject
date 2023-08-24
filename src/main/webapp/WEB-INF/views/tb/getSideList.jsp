@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="${path}/resources/side.css">
+<link rel="stylesheet" href="${path}/resources/css/side.css">
 <title>Insert title here</title>
 </head>
 <body>
