@@ -49,3 +49,18 @@
 	background-color: lightblue;
 	border-color: black;
 }
+
+.bottom{
+	display: flex;
+	width: 1200px;
+	height: 300px;
+	background: olive;
+}
+
+.orderList{
+	width: 50%
+}
+
+.orderButton{
+	width: 50%
+}

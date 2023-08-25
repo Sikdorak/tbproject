@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="${path}/resources/css/burger.css">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="${path}/resources/js/burger.js"></script>
+<script src="${path}/resources/js/burger.js?test=1"></script>
 </head>
 <body>
 
@@ -24,7 +24,7 @@
 
 <div class="productBox">
 	<c:forEach var="product" items="${burger}" begin="0" end="9">
-		<div class="item" onclick="addBurger('${product.p_id}','${product.p_name}','${product.p_price}')">
+		<div class="item" onclick="addBurger('${product.p_id}','${product.p_name}',${product.p_price})">
 			${product.p_name}
 			${product.p_price}
 		</div>

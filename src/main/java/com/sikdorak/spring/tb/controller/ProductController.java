@@ -1,26 +1,28 @@
 package com.sikdorak.spring.tb.controller;
 
-import java.util.Map;
+import java.util.List;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sikdorak.spring.tb.dto.KioskDto;
 import com.sikdorak.spring.tb.service.KioskService;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 @RestController
 @RequestMapping("/api/*")
 public class ProductController {
 	
-	private KioskService service;
 	
-	@PostMapping("updateBurger")
-	public void updateBurger(@RequestBody Map<String, Object> requestData) {
-		String p_id = (String) requestData.get("productId");
-		String p_name = (String) requestData.get("productName");
-		int p_price = (int) requestData.get("productPrice");
-		service.updateBurger(p_id,p_name,p_price);
+	private KioskService service;
+
+	@GetMapping("updateBurger")
+	public List<KioskDto> updateBurger(KioskDto kioskDto) {
+		service.updateBurger(kioskDto);
+		return service.getMenuList();
 	}
 
 }

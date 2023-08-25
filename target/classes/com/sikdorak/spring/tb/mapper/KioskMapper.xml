@@ -15,8 +15,12 @@
 		select*from side_table
 	</select>
 	
-	<update id="updateBurger">
+	<insert id="updateBurger">
 		insert into order_menu_table values(#{p_id},#{p_name},#{p_price})
-	</update>
+	</insert>
+	
+	<select id="getMenuList" resultType="com.sikdorak.spring.tb.dto.KioskDto">
+		select*from order_menu_table
+	</select>
 	
 </mapper>	

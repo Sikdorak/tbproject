@@ -1,5 +1,8 @@
 package com.sikdorak.spring.tb.service;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +12,9 @@ import com.sikdorak.spring.tb.dto.KioskDto;
 import com.sikdorak.spring.tb.mapper.KioskMapper;
 
 import lombok.Setter;
+import lombok.extern.log4j.Log4j;
 
+@Log4j
 @Service
 public class KioskServiceImpl implements KioskService {
 	
@@ -32,8 +37,16 @@ public class KioskServiceImpl implements KioskService {
 	}
 	
 	@Override
-	public void updateBurger(String p_id,String p_name,int p_price) {
-		mapper.updateBurger(p_id,p_name,p_price);
+	public void updateBurger(KioskDto kioskDto) {
+		log.info("============"+kioskDto);
+		mapper.updateBurger(kioskDto);
+	}
+	
+	@Override
+	public List<KioskDto>getMenuList(){
+		ArrayList<KioskDto> x = (ArrayList<KioskDto>) mapper.getMenuList();
+		log.info("============"+x.get(0).getP_id());
+		return x;
 	}
 
 }
