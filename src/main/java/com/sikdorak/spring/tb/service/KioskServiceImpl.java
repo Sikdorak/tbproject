@@ -1,7 +1,5 @@
 package com.sikdorak.spring.tb.service;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sikdorak.spring.tb.dto.KioskDto;
+import com.sikdorak.spring.tb.dto.ProductDtoList;
 import com.sikdorak.spring.tb.mapper.KioskMapper;
 
 import lombok.Setter;
@@ -43,10 +42,10 @@ public class KioskServiceImpl implements KioskService {
 	}
 	
 	@Override
-	public List<KioskDto>getMenuList(){
-		ArrayList<KioskDto> x = (ArrayList<KioskDto>) mapper.getMenuList();
-		log.info("============"+x.get(0).getP_id());
-		return x;
+	public ProductDtoList getMenuList(){
+		List<KioskDto> dtoList = mapper.getMenuList();
+		ProductDtoList ProductDtoList = new ProductDtoList(dtoList);
+		return ProductDtoList;
 	}
 
 }

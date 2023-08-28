@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="${path}/resources/css/burger.css">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="${path}/resources/js/burger.js?test=1"></script>
+<script src="${path}/resources/js/burger.js?test=2"></script>
 </head>
 <body>
 
