@@ -10,5 +10,6 @@ public interface KioskService {
 	public List<KioskDto>getDrinkList();
 	public List<KioskDto>getSideList();
 	public void updateBurger(KioskDto kioskDto);
-	public ProductDtoList getMenuList();
+//	public ProductDtoList getMenuList();
+	public List<KioskDto>getMenuList();
 }

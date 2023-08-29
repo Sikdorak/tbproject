@@ -41,11 +41,16 @@ public class KioskServiceImpl implements KioskService {
 		mapper.updateBurger(kioskDto);
 	}
 	
+//	@Override
+//	public ProductDtoList getMenuList(){
+//		List<KioskDto> dtoList = mapper.getMenuList();
+//		ProductDtoList ProductDtoList = new ProductDtoList(dtoList);
+//		return ProductDtoList;
+//	}
+	
 	@Override
-	public ProductDtoList getMenuList(){
-		List<KioskDto> dtoList = mapper.getMenuList();
-		ProductDtoList ProductDtoList = new ProductDtoList(dtoList);
-		return ProductDtoList;
+	public List<KioskDto>getMenuList(){
+		return mapper.getMenuList();
 	}
 
 }
