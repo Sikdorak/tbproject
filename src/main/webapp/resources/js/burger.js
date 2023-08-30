@@ -1,4 +1,3 @@
-// function addBurger(productId,productName,productPrice){
 function addBurger(Id,Name,Price){
     $.ajax({
         url:"/api/updateBurger",
@@ -8,13 +7,14 @@ function addBurger(Id,Name,Price){
             "p_name": Name,
             "p_price": Price
         },
-        // dataType:"json",
         success:function(response){
+            $(".orderList").empty();
             console.log(response)
-            for(var i = 0; i < response.length; i++)
-            var menu = response[i];
-            var menuData = menu.p_name + " " + menu.p_price
-            $(".orderList").append(menuData)
+            for(var i = 0; i < response.length; i++){
+                var menu = response[i];
+                var menuData = menu.p_name + " " + menu.p_price + "<br>"
+                $(".orderList").append(menuData);
+            }
         },
         error:function(xhr, status, error){
             console.error(error)
