@@ -6,8 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="${path}/resources/css/side.css">
+<c:set var="tl" value="<%= System.currentTimeMillis() %>"></c:set>
+<link rel="stylesheet" href="${path}/resources/css/side.css?ver=${tl}">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="${path}/resources/js/side.js?ver=${tl}"></script>
 </head>
 <body>
 
@@ -22,7 +25,7 @@
 
 <div class="productBox">
 	<c:forEach var="product" items="${side}" begin="0" end="9">
-		<div class="item" onclick="location.href='/tb/addCart?name=${product.p_name}&price=${product.p_price}'">
+		<div class="item" onclick="addSide('${product.p_id}','${product.p_name}',${product.p_price})">
 			${product.p_name}
 			${product.p_price}
 		</div>

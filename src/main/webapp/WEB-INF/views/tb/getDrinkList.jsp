@@ -25,7 +25,7 @@
 
 <div class="productBox">
 	<c:forEach var="product" items="${drink}" begin="0" end="9">
-		<div class="item" onclick="addBurger('${product.p_id}','${product.p_name}',${product.p_price})">
+		<div class="item" onclick="addDrink('${product.p_id}','${product.p_name}',${product.p_price})">
 			${product.p_name}
 			${product.p_price}
 		</div>
