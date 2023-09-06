@@ -32,5 +32,10 @@
 	</c:forEach>
 </div>
 
+<div class="bottom">
+	<div class="orderList"></div>
+	<div class="orderButton">주문하기</div>
+</div>
+
 </body>
 </html>
