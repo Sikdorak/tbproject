@@ -24,4 +24,10 @@ public class ProductController {
 		service.updateBurger(kioskDto);
 		return service.getMenuList();
 	}
+	
+	@GetMapping("updateDrink")
+	public List<KioskDto> updateDrink(KioskDto kioskDto) {
+		service.updateBurger(kioskDto);
+		return service.getMenuList();
+	}
 }
