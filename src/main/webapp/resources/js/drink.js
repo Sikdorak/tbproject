@@ -1,6 +1,6 @@
 function addBurger(Id,Name,Price){
     $.ajax({
-        url:"/api/updateBurger",
+        url:"/api/updateDrink",
         method:"GET",
         data:{
             "p_id": Id,
